@@ -1471,9 +1471,9 @@ class LivewireDatatable extends Component
     {
         $this->emit('refreshDynamic');
 
-        if ($this->persistPerPage) {
-            session()->put([$this->sessionStorageKey() . $this->name . '_perpage' => $this->perPage]);
-        }
+        // if ($this->persistPerPage) {
+        //     session()->put([$this->sessionStorageKey() . $this->name . '_perpage' => $this->perPage]);
+        // }
 
         return view('datatables::datatable')->layoutData(['title' => $this->title]);
     }
