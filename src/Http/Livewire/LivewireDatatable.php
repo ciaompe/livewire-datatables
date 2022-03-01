@@ -63,8 +63,8 @@ class LivewireDatatable extends Component
     public $userFilter;
     public $persistComplexQuery;
     public $persistHiddenColumns = true;
-    public $persistSort = true;
-    public $persistPerPage = true;
+    public $persistSort = false;
+    public $persistPerPage = false;
     public $persistFilters = true;
 
     /**
