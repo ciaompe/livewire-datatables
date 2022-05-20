@@ -202,7 +202,7 @@ class ComplexQuery extends Component
     public function getOperands($key)
     {
         $operands = [
-            'string' => ['equals', 'does not equal', 'contains', 'does not contain', 'is empty', 'is not empty', 'begins with', 'ends with'],
+            'string' => ['equals', 'does not equal', 'contains', 'does not contain', 'is empty', 'is not empty', 'begins with', 'ends with', '<', '<=', '>', '>='],
             'json' => ['equals', 'does not equal', 'contains', 'does not contain', 'is empty', 'is not empty', 'begins with', 'ends with'],
             'editable' => ['equals', 'does not equal', 'contains', 'does not contain', 'is empty', 'is not empty', 'begins with', 'ends with'],
             'number' => ['=', '<>', '<', '<=', '>', '>='],
