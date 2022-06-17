@@ -75,6 +75,7 @@ class LivewireDatatable extends Component
     public $massActionOption;
     public $customGroupBy = false;
     public $selectAll = true;
+    public $customSortBy = '';
 
     /**
      * @var array List your groups and the corresponding label (or translation) here.
