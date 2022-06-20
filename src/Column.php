@@ -275,7 +275,7 @@ class Column
     public function  custombooleanFilterable()
     {
         $this->filterable = true;
-        $this->filterView = ' custom_boolean';
+        $this->filterView = 'customboolean';
 
         return $this;
     }
