@@ -272,6 +272,14 @@ class Column
         return $this;
     }
 
+    public function  custombooleanFilterable()
+    {
+        $this->filterable = true;
+        $this->filterView = ' custom_boolean';
+
+        return $this;
+    }
+
     public function exportCallback($exportCallback)
     {
         $this->exportCallback = $exportCallback;

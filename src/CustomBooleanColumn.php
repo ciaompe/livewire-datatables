@@ -4,7 +4,7 @@ namespace Mediconesystems\LivewireDatatables;
 
 class CustomBooleanColumn extends Column
 {
-    public $type = 'boolean';
+    public $type = 'customboolean';
     public $callback;
 
     public function __construct()
