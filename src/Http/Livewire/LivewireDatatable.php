@@ -679,6 +679,7 @@ class LivewireDatatable extends Component
         $filters = session()->get($this->sessionStorageKey() . '_filter');
 
         $this->activeBooleanFilters = $filters['boolean'] ?? [];
+        $this->activeBooleanFilters = $filters['customboolean'] ?? [];
         $this->activeSelectFilters = $filters['select'] ?? [];
         $this->activeTextFilters = $filters['text'] ?? [];
         $this->activeDateFilters = $filters['date'] ?? [];
