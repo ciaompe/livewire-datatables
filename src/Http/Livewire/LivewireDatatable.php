@@ -596,6 +596,7 @@ class LivewireDatatable extends Component
             $this->sessionStorageKey() . '_filter' => [
                 'text' => $this->activeTextFilters,
                 'boolean' => $this->activeBooleanFilters,
+                'customboolean' => $this->activeBooleanFilters,
                 'select' => $this->activeSelectFilters,
                 'date' => $this->activeDateFilters,
                 'time' => $this->activeTimeFilters,
