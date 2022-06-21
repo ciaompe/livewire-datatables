@@ -883,12 +883,12 @@ class LivewireDatatable extends Component
 
     public function doSelectFilter($index, $value)
     {
-        if($value == "si" || $value == "no") {
+        // if($value == "si" || $value == "no") {
+        //     $this->activeSelectFilters[$index][0] = $value;
+        // }else {
             $this->activeSelectFilters[$index][0] = $value;
-        }else {
-            $this->activeSelectFilters[$index][] = $value;
-        }
-        
+        // }
+
         $this->setPage(1);
         $this->setSessionStoredFilters();
     }
