@@ -958,10 +958,14 @@ class LivewireDatatable extends Component
 
     public function removeSelectFilter($column, $key = null)
     {
-        unset($this->activeSelectFilters[$column][$key]);
-        if (count($this->activeSelectFilters[$column]) < 1) {
+        if(isset($this->activeSelectFilters[$column]) && array_key_exists($key, $this->activeSelectFilters[$column])) {
+            unset($this->activeSelectFilters[$column][$key]);
+        }
+
+        if (isset($this->activeSelectFilters[$column]) && count($this->activeSelectFilters[$column]) < 1) {
             unset($this->activeSelectFilters[$column]);
         }
+        
         $this->setPage(1);
         $this->setSessionStoredFilters();
     }
