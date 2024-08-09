@@ -886,6 +886,7 @@ class LivewireDatatable extends Component
 
     public function doSelectFilter($index, $value)
     {
+        // commented by tharindu on 09/08/2024
         // if($value == "si" || $value == "no") {
         //     $this->activeSelectFilters[$index][0] = $value;
         // }else {
@@ -898,9 +899,10 @@ class LivewireDatatable extends Component
 
     public function doTextFilter($index, $value)
     {
-        foreach (explode(' ', $value) as $val) {
-            $this->activeTextFilters[$index][] = $val;
-        }
+        $this->activeTextFilters[$index][] = $value;
+        // foreach (explode(' ', $value) as $val) {
+        //     $this->activeTextFilters[$index][] = $val;
+        // }
 
         $this->setPage(1);
         $this->setSessionStoredFilters();
@@ -1418,6 +1420,7 @@ class LivewireDatatable extends Component
         return $this;
     }
 
+    // tdk
     public function addTextFilters()
     {
         if (! count($this->activeTextFilters)) {
@@ -1434,7 +1437,9 @@ class LivewireDatatable extends Component
                             $query->orWhere(function ($query) use ($index, $value) {
                                 foreach ($this->getColumnFilterStatement($index) as $column) {
                                     $column = is_array($column) ? $column[0] : $column;
-                                    $query->orWhereRaw('LOWER(' . $this->tablePrefix . $column . ') like ?', [mb_strtolower("%$value%")]);
+                                    $query->whereRaw('LOWER(' . $this->tablePrefix . $column . ') like ?', [mb_strtolower("%$value%")]);
+                                    // this is the original code below
+                                    // $query->orWhereRaw('LOWER(' . $this->tablePrefix . $column . ') like ?', [mb_strtolower("%$value%")]);
                                 }
                             });
                         }
