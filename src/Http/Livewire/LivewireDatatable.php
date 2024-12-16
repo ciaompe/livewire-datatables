@@ -1434,7 +1434,7 @@ class LivewireDatatable extends Component
                         if ($this->columnIsRelation($this->freshColumns[$index])) {
                             $this->addAggregateFilter($query, $index, $activeTextFilter);
                         } else {
-                            $query->orWhere(function ($query) use ($index, $value) {
+                            $query->where(function ($query) use ($index, $value) { //changed orWhere to where
                                 foreach ($this->getColumnFilterStatement($index) as $column) {
                                     $column = is_array($column) ? $column[0] : $column;
                                     $query->whereRaw('LOWER(' . $this->tablePrefix . $column . ') like ?', [mb_strtolower("%$value%")]);
